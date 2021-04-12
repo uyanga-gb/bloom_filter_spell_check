@@ -1,4 +1,4 @@
-# bloom_filter_spell_check
+# Bloom filter spell checker
 Implemented spell checker game using bloom filter.
 
 # To start the game
