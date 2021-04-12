@@ -1,0 +1,125 @@
+body {
+    background-color: #1e1e1e;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto Light", sans-serif;
+}
+.container {
+    height: 600px;
+    width: 600px;
+    margin-top: 30px;
+    background-color: #252525;
+    box-shadow: 0 1px 4px rgb(0, 0, 0, 0.8);
+    border: 2px solid transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.progress-bar-wrapper {
+    width: 500px;
+    background-color: #949494;
+    border: 1px solid #fff;
+    margin-top: 30px;
+}
+.progress-bar {
+    height: 10px;
+}
+#current-correct {
+    background-color: #03dac5;
+}
+#current-wrong {
+    background-color: #FF4181;
+}
+h2 {
+    color: #c6c6c6;
+}
+.title {
+    color: #c6c6c6;
+    margin: 140px 25px 5px 25px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 20px;
+}
+.input-wrapper {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+#input_word {
+    height: 30px;
+    width: 300px;
+    border-radius: 4px;
+    border: none;
+    background: #4d4b4b;
+    color: #ffffff;
+    outline: none;
+    margin-left: 35px;
+    padding: 3px 3px 3px 10px;
+}
+.check {
+    background-color: #bb86fc;
+    border-radius: 4px;
+    border: none;
+    font-size: 14px;
+    color: #1e162a;
+    height: 35px;
+    width: 80px;
+    cursor: pointer;
+    display: block;
+    margin-top: 20px;
+}
+.check:hover {background-color: #CD9EFC}
+
+.check:active {
+    transform: translateY(4px);
+}
+.answer_icon_wrapper {
+    height: 35px;
+    width: 35px;
+    margin-left: 10px;
+    position: relative;
+}
+
+svg {
+    height: 35px;
+    width: 35px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#correct {
+    visibility: hidden;
+}
+#wrong {
+    visibility: hidden;
+}
+.end-game-dialog {
+    height: 100px;
+}
+#won-dialog {
+    background-color: #03dac5;
+}
+#lost-dialog {
+    background-color: #ff2b71;
+}
+.typed-words-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 350px;
+    margin-top: 30px;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.typed-words {
+    font-size: 12px;
+}
+
+#correct-typed-words {
+    color: #018786;
+}
+#wrong-typed-words {
+    color: #81042b
+}

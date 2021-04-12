@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bloom Filter Spell Checker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>Bloom Filter Spell Checker Game</h2>
+    <div class="container">
+        <dialog class="end-game-dialog" id="won-dialog">YOU WIN
+            <input class="check" type="button" onclick="reset()" value="Play again">
+        </dialog>
+        <dialog class="end-game-dialog" id="lost-dialog">YOU LOST
+            <input class="check" type="button" onclick="reset()" value="Play again">
+        </dialog>
+        <div class="progress-bar-wrapper">
+            <div class="progress-bar" id="current-correct" style="width:0"></div>
+            <div class="progress-bar" id="current-wrong" style="width:0"></div>
+        </div>
+        <p class="title">Type one word at a time to check the spelling. </br> Your goal is to type 10 correct words to win, </br> but typing 10 incorrect words will result in a loss.  </p>
+        <div class="input-wrapper">
+            <input id="input_word" type="text" name="word" autocomplete="off" spellcheck="false">
+            <div class="answer_icon_wrapper">
+                <svg id="correct" height="512" viewBox="0 0 512 512" width="512" xmlns="http://www.w3.org/2000/svg"><g><path d="m445.936 20.657h-379.872c-19.731 0-37.443 8.649-49.548 22.364l-6.403 43.701v239.535c0 36.486 19.465 66.064 55.951 66.064h89.427c6.57 0 12.872 10.817 17.518 15.463l77.704 77.704 16.721 2.268c.95-.664 1.856-1.42 2.704-2.268l77.704-77.704c4.646-4.646 10.948-7.256 17.518-7.256h80.577c36.486 0 66.064-29.578 66.064-66.064v-247.742c-.001-36.487-29.579-66.065-66.065-66.065z" fill="#03dac5"/><path d="m164.159 407.784 77.704 77.704c6.959 6.959 17.774 7.714 25.57 2.268l-91.595-91.65c-7.685-7.685-18.323-12.093-29.194-12.093h-80.579c-27.323 0-49.548-22.226-49.548-49.548v-291.444c-10.25 11.639-16.517 26.973-16.517 43.701v247.742c0 36.486 29.578 66.065 66.065 66.065h80.577c6.57-.001 12.872 2.609 17.517 7.255z" fill="#e7601e"/><path d="m387.626 177.951c-4.003-35.677-34.163-63.99-69.988-66.315-21.701-1.408-41.538 6.405-56.107 19.853-3.135 2.894-7.926 2.894-11.062 0-14.569-13.448-34.406-21.261-56.107-19.853-8.653.562-16.976 2.639-24.679 5.971-24.19 10.461-40.655 60.344-40.655 60.344-8.486 75.632 93.735 136.686 124.126 154.751l21.005-.808c37.878-23.988 121.196-85.05 113.467-153.943z" fill="#121212"/><path d="m142.235 167.09c2.224-19.818 12.594-37.402 27.447-49.483-24.153 10.475-42.275 33.311-45.309 60.344-8.485 75.632 92.757 141.829 123.148 159.894 5.245 3.117 11.712 3.117 16.957 0 2.702-1.606 5.985-3.61 9.68-5.95-19.374-10.919-141.105-82.962-131.923-164.805z"/></g></svg>
+                <svg id="wrong" height="512" viewBox="0 0 512 512" width="512" xmlns="http://www.w3.org/2000/svg"><path d="m256 0c-141.164062 0-256 114.835938-256 256s114.835938 256 256 256 256-114.835938 256-256-114.835938-256-256-256zm0 0" fill="#ff4181"/><path d="m350.273438 320.105469c8.339843 8.34375 8.339843 21.824219 0 30.167969-4.160157 4.160156-9.621094 6.25-15.085938 6.25-5.460938 0-10.921875-2.089844-15.082031-6.25l-64.105469-64.109376-64.105469 64.109376c-4.160156 4.160156-9.621093 6.25-15.082031 6.25-5.464844 0-10.925781-2.089844-15.085938-6.25-8.339843-8.34375-8.339843-21.824219 0-30.167969l64.109376-64.105469-64.109376-64.105469c-8.339843-8.34375-8.339843-21.824219 0-30.167969 8.34375-8.339843 21.824219-8.339843 30.167969 0l64.105469 64.109376 64.105469-64.109376c8.34375-8.339843 21.824219-8.339843 30.167969 0 8.339843 8.34375 8.339843 21.824219 0 30.167969l-64.109376 64.105469zm0 0" fill="#fafafa"/></svg>
+            </div>
+        </div>
+        <input class="check" type="button" onclick="spellCheck()" value="CHECK IT">
+        <div class="typed-words-wrapper">
+            <ul class="typed-words" id="correct-typed-words"> Correct words: </ul>
+            <ul class="typed-words" id="wrong-typed-words">Incorrect words: </ul>
+        </div>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>
